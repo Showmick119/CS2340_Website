@@ -378,100 +378,139 @@
             <h2 class="section-title">Feature-Rich Financial Management</h2>
             
             <div class="feature-showcase">
+                <!-- Feature 1: Authentication System -->
                 <div class="feature-detail">
                     <div class="feature-number">01</div>
-                    <h3>Authentication System</h3>
-                    <div class="feature-description">
-                        <ul>
-                            <li><strong>Welcome Screen:</strong> Clean splash screen with Start and Quit buttons</li>
-                            <li><strong>Login Screen:</strong> Email and password with validation (whitespace/null checks)</li>
-                            <li><strong>Registration:</strong> New account creation with Firebase Authentication</li>
-                            <li><strong>Security:</strong> All credentials stored securely with automatic session management</li>
-                        </ul>
+                    <div>
+                        <h3>Authentication System</h3>
+                        <div class="feature-description">
+                            <ul>
+                                <li><strong>Welcome Screen:</strong> Clean splash screen with Start and Quit buttons</li>
+                                <li><strong>Login Screen:</strong> Email and password with validation (whitespace/null checks)</li>
+                                <li><strong>Registration:</strong> New account creation with Firebase Authentication</li>
+                                <li><strong>Security:</strong> All credentials stored securely with automatic session management</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Feature 2: Dashboard -->
                 <div class="feature-detail alt">
                     <div class="feature-number">02</div>
-                    <h3>Dashboard - Financial Command Center</h3>
-                    <div class="feature-description">
-                        <ul>
-                            <li><strong>Overview Cards:</strong> Total spent and remaining amounts with color-coded indicators</li>
-                            <li><strong>Interactive Charts:</strong> Pie chart for expense breakdown by category, bar chart for budget usage</li>
-                            <li><strong>Quick Budgets List:</strong> Scrollable RecyclerView with status badges (green/yellow/red)</li>
-                            <li><strong>Calendar Selector:</strong> Date simulation for testing time-based features</li>
-                            <li><strong>Real-time Updates:</strong> Charts update immediately using LiveData observers</li>
-                        </ul>
+                    <div>
+                        <h3>Dashboard - Financial Command Center</h3>
+                        <div class="feature-description">
+                            <div style="margin-bottom: 24px;">
+                                <img src="assets/screenshots/dashboard.png" alt="Dashboard Overview" style="width: 50%; max-width: 300px; border-radius: 12px; box-shadow: var(--shadow-md); display: block; margin: 0 auto 24px;">
+                            </div>
+                            <ul>
+                                <li><strong>Overview Cards:</strong> Total spent and remaining amounts with color-coded indicators</li>
+                                <li><strong>Interactive Charts:</strong> Pie chart for expense breakdown by category, bar chart for budget usage</li>
+                                <li><strong>Quick Budgets List:</strong> Scrollable RecyclerView with status badges (green/yellow/red)</li>
+                                <li><strong>Calendar Selector:</strong> Date simulation for testing time-based features</li>
+                                <li><strong>Real-time Updates:</strong> Charts update immediately using LiveData observers</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Feature 3: Expense Log -->
                 <div class="feature-detail">
                     <div class="feature-number">03</div>
-                    <h3>Expense Log</h3>
-                    <div class="feature-description">
-                        <ul>
-                            <li><strong>Expense List:</strong> Sorted by date with name, amount, category, date visible</li>
-                            <li><strong>Add Button (FAB):</strong> Floating action button for expense creation</li>
-                            <li><strong>Creation Form:</strong> Name, Amount (>0), Category dropdown, Date picker (≤ current date), Notes</li>
-                            <li><strong>Savings Circle Integration:</strong> Link expenses to group challenges</li>
-                            <li><strong>Validation:</strong> Real-time error messages with focus management</li>
-                        </ul>
+                    <div>
+                        <h3>Expense Log</h3>
+                        <div class="feature-description">
+                            <div style="margin-bottom: 24px;">
+                                <img src="assets/screenshots/expense-log.png" alt="Expense Log Screen" style="width: 50%; max-width: 300px; border-radius: 12px; box-shadow: var(--shadow-md); display: block; margin: 0 auto 24px;">
+                            </div>
+                            <ul>
+                                <li><strong>Expense List:</strong> Sorted by date with name, amount, category, date visible</li>
+                                <li><strong>Add Button (FAB):</strong> Floating action button for expense creation</li>
+                                <li><strong>Creation Form:</strong> Name, Amount (>0), Category dropdown, Date picker (≤ current date), Notes</li>
+                                <li><strong>Savings Circle Integration:</strong> Link expenses to group challenges</li>
+                                <li><strong>Validation:</strong> Real-time error messages with focus management</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Feature 4: Budget Management -->
                 <div class="feature-detail alt">
                     <div class="feature-number">04</div>
-                    <h3>Budget Management</h3>
-                    <div class="feature-description">
-                        <ul>
-                            <li><strong>Budget List:</strong> Sorted by start date with visual progress bars</li>
-                            <li><strong>Creation Form:</strong> Title, Amount, Category, Frequency (Weekly/Monthly), Start Date</li>
-                            <li><strong>Budget Details:</strong> Progress indicator, surplus/deficit calculation, linked expenses</li>
-                            <li><strong>Budget Calculator:</strong> 2-of-3 system (Total/Spent/Remaining)</li>
-                            <li><strong>Automatic Rollover:</strong> Budgets reset based on frequency and simulated date</li>
-                        </ul>
+                    <div>
+                        <h3>Budget Management</h3>
+                        <div class="feature-description">
+                            <div style="margin-bottom: 24px;">
+                                <img src="assets/screenshots/budgets.png" alt="Budget Management Screen" style="width: 50%; max-width: 300px; border-radius: 12px; box-shadow: var(--shadow-md); display: block; margin: 0 auto 24px;">
+                            </div>
+                            <ul>
+                                <li><strong>Budget List:</strong> Sorted by start date with visual progress bars</li>
+                                <li><strong>Creation Form:</strong> Title, Amount, Category, Frequency (Weekly/Monthly), Start Date</li>
+                                <li><strong>Budget Details:</strong> Progress indicator, surplus/deficit calculation, linked expenses</li>
+                                <li><strong>Budget Calculator:</strong> 2-of-3 system (Total/Spent/Remaining)</li>
+                                <li><strong>Automatic Rollover:</strong> Budgets reset based on frequency and simulated date</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Feature 5: Savings Circles -->
                 <div class="feature-detail">
                     <div class="feature-number">05</div>
-                    <h3>Savings Circles - Group Challenges</h3>
-                    <div class="feature-description">
-                        <ul>
-                            <li><strong>Create Circle:</strong> Group name, challenge title, goal amount, frequency, personal allocation</li>
-                            <li><strong>Invitation System:</strong> Send invites by email, accept/decline in InvitationsActivity</li>
-                            <li><strong>Circle Details:</strong> Member information, individual contributions, group progress</li>
-                            <li><strong>Real-time Sync:</strong> All members see updates immediately via Firebase listeners</li>
-                            <li><strong>Cycle Management:</strong> Weekly (7 days) or Monthly periods from acceptance date</li>
-                        </ul>
+                    <div>
+                        <h3>Savings Circles - Group Challenges</h3>
+                        <div class="feature-description">
+                            <div style="margin-bottom: 24px;">
+                                <img src="assets/screenshots/savings-circles.png" alt="Savings Circles Screen" style="width: 50%; max-width: 300px; border-radius: 12px; box-shadow: var(--shadow-md); display: block; margin: 0 auto 24px;">
+                            </div>
+                            <ul>
+                                <li><strong>Create Circle:</strong> Group name, challenge title, goal amount, frequency, personal allocation</li>
+                                <li><strong>Invitation System:</strong> Send invites by email, accept/decline in InvitationsActivity</li>
+                                <li><strong>Circle Details:</strong> Member information, individual contributions, group progress</li>
+                                <li><strong>Real-time Sync:</strong> All members see updates immediately via Firebase listeners</li>
+                                <li><strong>Cycle Management:</strong> Weekly (7 days) or Monthly periods from acceptance date</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Feature 6: AI Chatbot -->
                 <div class="feature-detail alt">
                     <div class="feature-number">06</div>
-                    <h3>AI Chatbot - Financial Advisor</h3>
-                    <div class="feature-description">
-                        <ul>
-                            <li><strong>AI Model:</strong> Local Ollama server running LLaMA 3.2</li>
-                            <li><strong>Custom Commands:</strong> "Spending this week", "Cut costs", "My budget", "My expenses"</li>
-                            <li><strong>Context-Aware:</strong> Fetches real user data from Firebase for personalized advice</li>
-                            <li><strong>Session Persistence:</strong> All conversations saved with AI-generated titles</li>
-                            <li><strong>Previous Chats:</strong> Dialog showing all past sessions, load on tap</li>
-                        </ul>
+                    <div>
+                        <h3>AI Chatbot - Financial Advisor</h3>
+                        <div class="feature-description">
+                            <div style="margin-bottom: 24px;">
+                                <img src="assets/screenshots/ai-chatbot.png" alt="AI Chatbot Screen" style="width: 50%; max-width: 300px; border-radius: 12px; box-shadow: var(--shadow-md); display: block; margin: 0 auto 24px;">
+                            </div>
+                            <ul>
+                                <li><strong>AI Model:</strong> Local Ollama server running LLaMA 3.2</li>
+                                <li><strong>Custom Commands:</strong> "Spending this week", "Cut costs", "My budget", "My expenses"</li>
+                                <li><strong>Context-Aware:</strong> Fetches real user data from Firebase for personalized advice</li>
+                                <li><strong>Session Persistence:</strong> All conversations saved with AI-generated titles</li>
+                                <li><strong>Previous Chats:</strong> Dialog showing all past sessions, load on tap</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
+                <!-- Feature 7: Smart Notifications -->
                 <div class="feature-detail">
                     <div class="feature-number">07</div>
-                    <h3>Smart Notifications System</h3>
-                    <div class="feature-description">
-                        <ul>
-                            <li><strong>Missed Expense Alert:</strong> Triggered after 3 days without logging</li>
-                            <li><strong>Budget Threshold Warning:</strong> Alert at 90% utilization</li>
-                            <li><strong>Queue System:</strong> Prevents notification overlap</li>
-                            <li><strong>Custom Dialog:</strong> RecyclerView showing all pending alerts</li>
-                            <li><strong>Persistence:</strong> Dismissed notifications stored in Firebase to prevent re-showing</li>
-                        </ul>
+                    <div>
+                        <h3>Smart Notifications System</h3>
+                        <div class="feature-description">
+                            <div style="margin-bottom: 24px;">
+                                <img src="assets/screenshots/notifications.png" alt="Notifications System" style="width: 50%; max-width: 300px; border-radius: 12px; box-shadow: var(--shadow-md); display: block; margin: 0 auto 24px;">
+                            </div>
+                            <ul>
+                                <li><strong>Missed Expense Alert:</strong> Triggered after 3 days without logging</li>
+                                <li><strong>Budget Threshold Warning:</strong> Alert at 90% utilization</li>
+                                <li><strong>Queue System:</strong> Prevents notification overlap</li>
+                                <li><strong>Custom Dialog:</strong> RecyclerView showing all pending alerts</li>
+                                <li><strong>Persistence:</strong> Dismissed notifications stored in Firebase to prevent re-showing</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
