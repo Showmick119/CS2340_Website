@@ -1,0 +1,34 @@
+# GitHub Pages Configuration for SpendWise Website
+
+# Site settings
+title: SpendWise
+description: A comprehensive personal finance management Android application developed for CS 2340 at Georgia Tech
+author: SpendWise Team
+
+# Build settings
+markdown: kramdown
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - ASSETS_GUIDE.md
+  - .gitignore
+
+# Theme (optional, but good for fallback)
+theme: jekyll-theme-minimal
+
+# Plugins (optional)
+plugins:
+  - jekyll-seo-tag
+
+# SEO settings
+lang: en-US
+url: ""  # will be set automatically by GitHub Pages
+baseurl: ""  # will be set automatically by GitHub Pages
+
+# Social (optional - update if you want)
+github_username: spendwise-team
+
+# Google Analytics (optional - add if you want tracking)
+# google_analytics: UA-XXXXXXXXX-X
+

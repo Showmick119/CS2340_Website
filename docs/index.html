@@ -1,0 +1,986 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SpendWise - A comprehensive personal finance management Android application developed by Georgia Tech CS 2340 students">
+    <meta name="keywords" content="SpendWise, personal finance, budgeting, Android app, Georgia Tech, CS 2340">
+    <title>SpendWise | Personal Finance Management</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="logo-icon">💰</span>
+                <span class="logo-text">SpendWise</span>
+            </div>
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#architecture" class="nav-link">Architecture</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#demo" class="nav-link">Demo</a></li>
+                <li><a href="#sprints" class="nav-link">Development</a></li>
+                <li><a href="#quality" class="nav-link">Quality</a></li>
+                <li><a href="#tech" class="nav-link">Technologies</a></li>
+                <li><a href="#team" class="nav-link">Team</a></li>
+                <li><a href="https://github.com" target="_blank" class="nav-link cta-link">
+                    <svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+                    </svg>
+                    GitHub
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">
+                    <span class="gradient-text">SpendWise</span>
+                </h1>
+                <p class="hero-subtitle">Take Control of Your Financial Future</p>
+                <p class="hero-description">
+                    A comprehensive personal finance management Android application that empowers users to track expenses, 
+                    create budgets, visualize spending patterns, participate in group saving challenges, and receive 
+                    AI-powered financial guidance—all within an intuitive, student-friendly interface.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#demo" class="btn btn-primary">Watch Demo</a>
+                    <a href="https://github.com" target="_blank" class="btn btn-secondary">View on GitHub</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <div class="stat-number">8,000+</div>
+                        <div class="stat-label">Lines of Code</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">4</div>
+                        <div class="stat-label">Sprints</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">40+</div>
+                        <div class="stat-label">Unit Tests</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">6</div>
+                        <div class="stat-label">Team Members</div>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="phone-mockup">
+                    <div class="phone-frame">
+                        <div class="phone-screen">
+                            <div class="app-preview">
+                                <div class="preview-header">
+                                    <div class="preview-time">9:41</div>
+                                </div>
+                                <div class="preview-content">
+                                    <div class="preview-title">Dashboard</div>
+                                    <div class="preview-cards">
+                                        <div class="mini-card green">
+                                            <div class="mini-label">Total Spent</div>
+                                            <div class="mini-value">$847.50</div>
+                                        </div>
+                                        <div class="mini-card blue">
+                                            <div class="mini-label">Remaining</div>
+                                            <div class="mini-value">$652.50</div>
+                                        </div>
+                                    </div>
+                                    <div class="preview-chart">
+                                        <svg viewBox="0 0 100 100">
+                                            <circle cx="50" cy="50" r="40" fill="none" stroke="#E0E0E0" stroke-width="20"/>
+                                            <circle cx="50" cy="50" r="40" fill="none" stroke="#4ECDC4" stroke-width="20" 
+                                                    stroke-dasharray="75.4 175.92" transform="rotate(-90 50 50)"/>
+                                            <circle cx="50" cy="50" r="40" fill="none" stroke="#FF6B6B" stroke-width="20" 
+                                                    stroke-dasharray="50.27 201.06" stroke-dashoffset="-75.4" transform="rotate(-90 50 50)"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Scroll to explore</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section class="overview">
+        <div class="container">
+            <h2 class="section-title">Project Overview</h2>
+            <p class="overview-text">
+                SpendWise was developed as a semester-long software engineering project that demonstrates practical 
+                application of object-oriented design principles, architectural patterns, and Agile development 
+                methodologies. The application addresses the real-world need for accessible, user-friendly financial 
+                tracking tools that help individuals, particularly students and young professionals, build better money habits.
+            </p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Expense Tracking</h3>
+                    <p>Log expenses with categories, dates, amounts, and notes with robust validation</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💰</div>
+                    <h3>Budget Management</h3>
+                    <p>Create and monitor weekly or monthly budgets with visual progress indicators</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>Data Visualization</h3>
+                    <p>Interactive pie charts and bar charts showing spending breakdowns and budget utilization</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Savings Circles</h3>
+                    <p>Collaborative group saving challenges with real-time progress tracking and invitation system</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI Financial Advisor</h3>
+                    <p>Context-aware chatbot powered by LLaMA 3.2 providing personalized budgeting tips and insights</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔔</div>
+                    <h3>Smart Notifications</h3>
+                    <p>In-app reminder system alerting users about missed logs and budget thresholds</p>
+                </div>
+            </div>
+
+            <div class="methodology">
+                <h3>Agile Development Methodology</h3>
+                <div class="methodology-items">
+                    <div class="method-item">✓ Pre-sprint planning and task assignment</div>
+                    <div class="method-item">✓ Regular scrum meetings and code reviews</div>
+                    <div class="method-item">✓ Pull request workflows with peer reviews</div>
+                    <div class="method-item">✓ Iterative feature delivery across four sprints</div>
+                    <div class="method-item">✓ Continuous integration with CheckStyle enforcement</div>
+                    <div class="method-item">✓ Comprehensive unit testing (2 tests per member per sprint)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="architecture" id="architecture">
+        <div class="container">
+            <h2 class="section-title">Built on Solid Foundations: MVVM Architecture</h2>
+            <p class="section-intro">
+                SpendWise implements the <strong>Model-View-ViewModel (MVVM)</strong> architectural pattern throughout 
+                all four sprints, ensuring clean separation of concerns, testability, and maintainability.
+            </p>
+
+            <!-- Optional: Visual Architecture Diagram -->
+            <div class="diagram-visual" style="text-align: center; margin: 40px 0;">
+                <img src="assets/architecture-diagram.svg" alt="MVVM Architecture Diagram" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);">
+            </div>
+
+            <div class="architecture-diagram">
+                <div class="arch-layer view-layer">
+                    <h3>View Layer (UI)</h3>
+                    <div class="layer-content">
+                        <div class="layer-subsection">
+                            <h4>Activities</h4>
+                            <p>MainActivity, Login, Register, Dashboard, ExpenseLog, Budgetlog, SavingCircleLog, 
+                               SavingCircleDetailActivity, InvitationsActivity, Chatbot, BudgetDetails</p>
+                        </div>
+                        <div class="layer-subsection">
+                            <h4>Adapters</h4>
+                            <p>BudgetAdapter, ExpenseAdapter, SavingCircleAdapter, InvitationAdapter, NotificationAdapter</p>
+                        </div>
+                        <div class="layer-subsection">
+                            <h4>Responsibility</h4>
+                            <p>UI rendering and user interaction capture. Observes LiveData from ViewModels. 
+                               No business logic or Firebase calls.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-flow">
+                    <svg width="100%" height="60" viewBox="0 0 200 60">
+                        <defs>
+                            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                                <polygon points="0 0, 10 3, 0 6" fill="#4ECDC4" />
+                            </marker>
+                        </defs>
+                        <line x1="100" y1="10" x2="100" y2="50" stroke="#4ECDC4" stroke-width="2" marker-end="url(#arrowhead)" />
+                        <text x="110" y="30" fill="#666" font-size="12">LiveData</text>
+                    </svg>
+                </div>
+
+                <div class="arch-layer viewmodel-layer">
+                    <h3>ViewModel Layer (Business Logic)</h3>
+                    <div class="layer-content">
+                        <div class="layer-subsection">
+                            <h4>ViewModels</h4>
+                            <p>LoginViewModel, ExpenseViewModel, BudgetViewModel, SavingCircleViewModel, 
+                               DashboardAnalyticsViewModel, ChatbotViewModel, NotificationViewModel</p>
+                        </div>
+                        <div class="layer-subsection">
+                            <h4>Responsibility</h4>
+                            <p>Handle all business logic, data transformation, validation, and coordinate between 
+                               Views and Models. Expose LiveData observables. Survive configuration changes.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="data-flow">
+                    <svg width="100%" height="60" viewBox="0 0 200 60">
+                        <line x1="100" y1="10" x2="100" y2="50" stroke="#4ECDC4" stroke-width="2" marker-end="url(#arrowhead)" />
+                        <text x="110" y="30" fill="#666" font-size="12">Data Access</text>
+                    </svg>
+                </div>
+
+                <div class="arch-layer model-layer">
+                    <h3>Model Layer (Data & Domain)</h3>
+                    <div class="layer-content">
+                        <div class="layer-subsection">
+                            <h4>Domain Models</h4>
+                            <p>User, Expense, Budget, Category, SavingCircle, SavingCircleMember, MemberCycle, 
+                               SavingCircleInvitation, ChatMessage, ChatSession, BudgetUsageSummary</p>
+                        </div>
+                        <div class="layer-subsection">
+                            <h4>Infrastructure</h4>
+                            <p>AnalyticsRepository, Firebase Singleton (thread-safe double-checked locking)</p>
+                        </div>
+                        <div class="layer-subsection">
+                            <h4>Responsibility</h4>
+                            <p>Domain entities with proper encapsulation. Repository aggregates complex operations. 
+                               All Firebase Realtime Database interactions mediated through Singleton.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="tech-stack">
+                <h3>Technology Stack</h3>
+                <div class="tech-grid">
+                    <div class="tech-item">
+                        <strong>Language</strong>
+                        <span>Java (100%)</span>
+                    </div>
+                    <div class="tech-item">
+                        <strong>Android SDK</strong>
+                        <span>Min 24, Target 34, Compile 35</span>
+                    </div>
+                    <div class="tech-item">
+                        <strong>Firebase</strong>
+                        <span>Authentication, Realtime Database</span>
+                    </div>
+                    <div class="tech-item">
+                        <strong>UI Framework</strong>
+                        <span>AndroidX, Material Design</span>
+                    </div>
+                    <div class="tech-item">
+                        <strong>Charts</strong>
+                        <span>MPAndroidChart v3.1.0</span>
+                    </div>
+                    <div class="tech-item">
+                        <strong>AI Integration</strong>
+                        <span>OkHttp3 + LLaMA 3.2</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="patterns-section">
+                <h3>Design Patterns Implemented</h3>
+                <div class="patterns-grid">
+                    <div class="pattern-card">
+                        <h4>🔒 Singleton Pattern</h4>
+                        <p><strong>Class:</strong> Firebase.java</p>
+                        <p><strong>Implementation:</strong> Thread-safe double-checked locking with volatile keywords</p>
+                        <p><strong>Purpose:</strong> Ensures single instance of Firebase Database connection across 
+                           the application, preventing resource wastage and ensuring data consistency.</p>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>🏭 Factory Pattern</h4>
+                        <p><strong>Class:</strong> ChartFactory.java</p>
+                        <p><strong>Methods:</strong> createCategoryPieChart(), createBudgetBarChart()</p>
+                        <p><strong>Purpose:</strong> Centralizes chart object creation logic, abstracting MPAndroidChart 
+                           configuration complexity from Views. Allows easy addition of new chart types.</p>
+                    </div>
+                    <div class="pattern-card">
+                        <h4>⚡ Strategy Pattern</h4>
+                        <p><strong>Interface:</strong> ExpenseSortStrategy</p>
+                        <p><strong>Implementations:</strong> SortByDateStrategy, SortByAmountStrategy, SortByCategoryStrategy</p>
+                        <p><strong>Purpose:</strong> Allows runtime selection of different sorting algorithms. 
+                           New sorting methods can be added without modifying existing code.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="principles-section">
+                <h3>SOLID Principles Application</h3>
+                <div class="principles-list">
+                    <div class="principle-item">
+                        <div class="principle-letter">S</div>
+                        <div class="principle-text">
+                            <strong>Single Responsibility</strong>
+                            <p>Each ViewModel handles one feature domain. Models contain only data and domain logic.</p>
+                        </div>
+                    </div>
+                    <div class="principle-item">
+                        <div class="principle-letter">O</div>
+                        <div class="principle-text">
+                            <strong>Open/Closed</strong>
+                            <p>Strategy pattern allows extension of sorting behaviors without modifying ExpenseViewModel code.</p>
+                        </div>
+                    </div>
+                    <div class="principle-item">
+                        <div class="principle-letter">L</div>
+                        <div class="principle-text">
+                            <strong>Liskov Substitution</strong>
+                            <p>All strategy implementations can substitute for ExpenseSortStrategy interface without breaking functionality.</p>
+                        </div>
+                    </div>
+                    <div class="principle-item">
+                        <div class="principle-letter">I</div>
+                        <div class="principle-text">
+                            <strong>Interface Segregation</strong>
+                            <p>Focused interfaces like ExpenseSortStrategy ensure classes only depend on methods they use.</p>
+                        </div>
+                    </div>
+                    <div class="principle-item">
+                        <div class="principle-letter">D</div>
+                        <div class="principle-text">
+                            <strong>Dependency Inversion</strong>
+                            <p>ViewModels depend on Repository abstractions rather than concrete Firebase implementation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2 class="section-title">Feature-Rich Financial Management</h2>
+            
+            <div class="feature-showcase">
+                <div class="feature-detail">
+                    <div class="feature-number">01</div>
+                    <h3>Authentication System</h3>
+                    <div class="feature-description">
+                        <ul>
+                            <li><strong>Welcome Screen:</strong> Clean splash screen with Start and Quit buttons</li>
+                            <li><strong>Login Screen:</strong> Email and password with validation (whitespace/null checks)</li>
+                            <li><strong>Registration:</strong> New account creation with Firebase Authentication</li>
+                            <li><strong>Security:</strong> All credentials stored securely with automatic session management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-detail alt">
+                    <div class="feature-number">02</div>
+                    <h3>Dashboard - Financial Command Center</h3>
+                    <div class="feature-description">
+                        <ul>
+                            <li><strong>Overview Cards:</strong> Total spent and remaining amounts with color-coded indicators</li>
+                            <li><strong>Interactive Charts:</strong> Pie chart for expense breakdown by category, bar chart for budget usage</li>
+                            <li><strong>Quick Budgets List:</strong> Scrollable RecyclerView with status badges (green/yellow/red)</li>
+                            <li><strong>Calendar Selector:</strong> Date simulation for testing time-based features</li>
+                            <li><strong>Real-time Updates:</strong> Charts update immediately using LiveData observers</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-number">03</div>
+                    <h3>Expense Log</h3>
+                    <div class="feature-description">
+                        <ul>
+                            <li><strong>Expense List:</strong> Sorted by date with name, amount, category, date visible</li>
+                            <li><strong>Add Button (FAB):</strong> Floating action button for expense creation</li>
+                            <li><strong>Creation Form:</strong> Name, Amount (>0), Category dropdown, Date picker (≤ current date), Notes</li>
+                            <li><strong>Savings Circle Integration:</strong> Link expenses to group challenges</li>
+                            <li><strong>Validation:</strong> Real-time error messages with focus management</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-detail alt">
+                    <div class="feature-number">04</div>
+                    <h3>Budget Management</h3>
+                    <div class="feature-description">
+                        <ul>
+                            <li><strong>Budget List:</strong> Sorted by start date with visual progress bars</li>
+                            <li><strong>Creation Form:</strong> Title, Amount, Category, Frequency (Weekly/Monthly), Start Date</li>
+                            <li><strong>Budget Details:</strong> Progress indicator, surplus/deficit calculation, linked expenses</li>
+                            <li><strong>Budget Calculator:</strong> 2-of-3 system (Total/Spent/Remaining)</li>
+                            <li><strong>Automatic Rollover:</strong> Budgets reset based on frequency and simulated date</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-number">05</div>
+                    <h3>Savings Circles - Group Challenges</h3>
+                    <div class="feature-description">
+                        <ul>
+                            <li><strong>Create Circle:</strong> Group name, challenge title, goal amount, frequency, personal allocation</li>
+                            <li><strong>Invitation System:</strong> Send invites by email, accept/decline in InvitationsActivity</li>
+                            <li><strong>Circle Details:</strong> Member information, individual contributions, group progress</li>
+                            <li><strong>Real-time Sync:</strong> All members see updates immediately via Firebase listeners</li>
+                            <li><strong>Cycle Management:</strong> Weekly (7 days) or Monthly periods from acceptance date</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-detail alt">
+                    <div class="feature-number">06</div>
+                    <h3>AI Chatbot - Financial Advisor</h3>
+                    <div class="feature-description">
+                        <ul>
+                            <li><strong>AI Model:</strong> Local Ollama server running LLaMA 3.2</li>
+                            <li><strong>Custom Commands:</strong> "Spending this week", "Cut costs", "My budget", "My expenses"</li>
+                            <li><strong>Context-Aware:</strong> Fetches real user data from Firebase for personalized advice</li>
+                            <li><strong>Session Persistence:</strong> All conversations saved with AI-generated titles</li>
+                            <li><strong>Previous Chats:</strong> Dialog showing all past sessions, load on tap</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="feature-detail">
+                    <div class="feature-number">07</div>
+                    <h3>Smart Notifications System</h3>
+                    <div class="feature-description">
+                        <ul>
+                            <li><strong>Missed Expense Alert:</strong> Triggered after 3 days without logging</li>
+                            <li><strong>Budget Threshold Warning:</strong> Alert at 90% utilization</li>
+                            <li><strong>Queue System:</strong> Prevents notification overlap</li>
+                            <li><strong>Custom Dialog:</strong> RecyclerView showing all pending alerts</li>
+                            <li><strong>Persistence:</strong> Dismissed notifications stored in Firebase to prevent re-showing</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section class="demo" id="demo">
+        <div class="container">
+            <h2 class="section-title">See SpendWise in Action</h2>
+            <p class="section-intro">
+                Watch our comprehensive demo showcasing end-to-end functionality across two complete user scenarios.
+            </p>
+            
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <!-- Placeholder for video embed -->
+                    <div class="video-placeholder">
+                        <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                        </svg>
+                        <p>Demo video coming soon</p>
+                        <small>Video will demonstrate authentication, dashboard, expenses, budgets, savings circles, chatbot, and notifications</small>
+                    </div>
+                    <!-- To embed actual video, replace placeholder with:
+                    <iframe src="YOUR_YOUTUBE_OR_VIMEO_EMBED_URL" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    -->
+                </div>
+            </div>
+
+            <div class="demo-highlights">
+                <h3>Demo Highlights</h3>
+                <div class="highlights-grid">
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🔐</span>
+                        <span>App launch and authentication</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">📊</span>
+                        <span>Dashboard overview with charts</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">➕</span>
+                        <span>Creating and viewing expenses</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">💰</span>
+                        <span>Creating and tracking budgets</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">👥</span>
+                        <span>Joining savings circles</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🤖</span>
+                        <span>Chatbot interaction</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">🔔</span>
+                        <span>Notification system</span>
+                    </div>
+                    <div class="highlight-item">
+                        <span class="highlight-icon">📅</span>
+                        <span>Date simulation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sprints Section -->
+    <section class="sprints" id="sprints">
+        <div class="container">
+            <h2 class="section-title">Evolution Through Four Sprints</h2>
+            
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-marker">0.5</div>
+                    <div class="timeline-content">
+                        <h3>Sprint 0.5: Foundation & Team Setup</h3>
+                        <div class="sprint-details">
+                            <ul>
+                                <li>Established team charter and communication protocols</li>
+                                <li>Set up GitHub repository with branching strategy</li>
+                                <li>Configured project management tools</li>
+                                <li>Practiced Git workflows (branches, PRs, merge to main)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">1</div>
+                    <div class="timeline-content">
+                        <h3>Sprint 1: Authentication & MVVM Foundation</h3>
+                        <div class="sprint-score">Score: 78/85</div>
+                        <div class="sprint-details">
+                            <p><strong>Focus:</strong> Firebase connection, user authentication, MVVM architecture, navigation structure</p>
+                            <p><strong>Deliverables:</strong></p>
+                            <ul>
+                                <li>Domain Model with 10+ nouns</li>
+                                <li>Use Case Diagram with 6+ use cases</li>
+                                <li>MVVM architecture documentation</li>
+                            </ul>
+                            <p><strong>Implementation:</strong></p>
+                            <ul>
+                                <li>Welcome/splash screen with Start and Quit buttons</li>
+                                <li>Firebase Authentication integration</li>
+                                <li>Login screen with validation</li>
+                                <li>Registration screen for new users</li>
+                                <li>Dashboard with bottom navigation</li>
+                                <li>Placeholder screens for all 5 modules</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">2</div>
+                    <div class="timeline-content">
+                        <h3>Sprint 2: Core Functionality - Expenses & Budgets</h3>
+                        <div class="sprint-score">Score: 89/110</div>
+                        <div class="sprint-details">
+                            <p><strong>Focus:</strong> Expense logging, budget creation, Firebase persistence, Singleton pattern</p>
+                            <p><strong>Deliverables:</strong></p>
+                            <ul>
+                                <li>Revised Domain Model with 2+ new nouns</li>
+                                <li>Sequence Diagram with ALT/LOOP/OPT fragments</li>
+                                <li>Singleton pattern evidence and justification</li>
+                            </ul>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                                <li>Fully functional Expense Log with category-based forms</li>
+                                <li>Validation: required fields, amount > 0, date ≤ current</li>
+                                <li>Budget creation with frequency (weekly/monthly)</li>
+                                <li>Budget Details with calculator (2-of-3 system)</li>
+                                <li>Firebase Singleton with thread-safe double-checked locking</li>
+                                <li>Calendar selector for date simulation</li>
+                                <li>12 unit tests covering validation and calculations</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">3</div>
+                    <div class="timeline-content">
+                        <h3>Sprint 3: Analytics & Group Features</h3>
+                        <div class="sprint-score">Score: 91/98</div>
+                        <div class="sprint-details">
+                            <p><strong>Focus:</strong> Dashboard visualizations, Savings Circles, Factory/Strategy patterns</p>
+                            <p><strong>Deliverables:</strong></p>
+                            <ul>
+                                <li>Design Class Diagram (DCD) with 7+ classes</li>
+                                <li>Sequence Diagram for group savings</li>
+                                <li>SOLID principles writeup (3 examples)</li>
+                                <li>Factory and Strategy pattern evidence</li>
+                            </ul>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                                <li>MPAndroidChart integration: Pie & Bar charts</li>
+                                <li>DashboardAnalyticsViewModel and AnalyticsRepository</li>
+                                <li>Real-time chart updates with LiveData</li>
+                                <li>Savings Circles with invitation workflow</li>
+                                <li>InvitationsActivity for accept/decline</li>
+                                <li>Group detail view with member tracking</li>
+                                <li>ChartFactory implementing Factory pattern</li>
+                                <li>Strategy pattern with 3 sorting implementations</li>
+                                <li>12 unit tests covering analytics and cycles</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-marker">4</div>
+                    <div class="timeline-content">
+                        <h3>Sprint 4: AI Integration & Polish</h3>
+                        <div class="sprint-score">Score: 100/100 (expected)</div>
+                        <div class="sprint-details">
+                            <p><strong>Focus:</strong> AI chatbot, notification system, code smells refactoring</p>
+                            <p><strong>Deliverables:</strong></p>
+                            <ul>
+                                <li>2 new design patterns with screenshots</li>
+                                <li>GRASP principles examples (3 total)</li>
+                                <li>6 code smell fixes with before/after screenshots</li>
+                                <li>Database schema documentation</li>
+                            </ul>
+                            <p><strong>Key Features:</strong></p>
+                            <ul>
+                                <li>AI Chatbot with local Ollama (LLaMA 3.2)</li>
+                                <li>Custom command parsing and context-aware responses</li>
+                                <li>Chat session persistence with AI-generated titles</li>
+                                <li>In-app notification system with queue management</li>
+                                <li>Missed expense alerts and budget threshold warnings</li>
+                                <li>CheckStyle fully passing</li>
+                                <li>17 test classes with 40+ test methods</li>
+                                <li>Production-ready code quality</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-stats">
+                <h3>Overall Project Statistics</h3>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-value">8,000+</div>
+                        <div class="stat-label">Lines of Java Code</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">24</div>
+                        <div class="stat-label">XML Layouts</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">17</div>
+                        <div class="stat-label">Test Classes</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">40+</div>
+                        <div class="stat-label">Unit Tests</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">6</div>
+                        <div class="stat-label">Design Patterns</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-value">7</div>
+                        <div class="stat-label">ViewModels</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quality Section -->
+    <section class="quality" id="quality">
+        <div class="container">
+            <h2 class="section-title">Engineered for Reliability</h2>
+            
+            <div class="quality-intro">
+                <p>
+                    SpendWise employs comprehensive unit testing to ensure feature reliability and catch regressions early. 
+                    Tests focus on business logic, validation, and data transformation—never mocking UI components.
+                </p>
+            </div>
+
+            <div class="testing-coverage">
+                <h3>Test Coverage (17 Test Classes)</h3>
+                <div class="tests-grid">
+                    <div class="test-item">ValidationTest</div>
+                    <div class="test-item">ExpenseModelTest</div>
+                    <div class="test-item">BudgetModelTest</div>
+                    <div class="test-item">CategoryTest</div>
+                    <div class="test-item">UserModelTest</div>
+                    <div class="test-item">FirebaseSingletonTest</div>
+                    <div class="test-item">AnalyticsRepositoryTest</div>
+                    <div class="test-item">BudgetUsageSummaryTest</div>
+                    <div class="test-item">BarChartAnalyticsTest</div>
+                    <div class="test-item">ChartFactoryTest</div>
+                    <div class="test-item">SavingCircleModelTest</div>
+                    <div class="test-item">SavingCircleMemberTest</div>
+                    <div class="test-item">SavingCircleInvitationTest</div>
+                    <div class="test-item">MemberCycleTest</div>
+                    <div class="test-item">StrategyPatternTest</div>
+                    <div class="test-item">DateFormattingTest</div>
+                    <div class="test-item">SavingCircleTest</div>
+                </div>
+            </div>
+
+            <div class="quality-tools">
+                <h3>Code Quality Tools</h3>
+                <div class="tools-list">
+                    <div class="tool-item">
+                        <div class="tool-icon">✓</div>
+                        <div class="tool-details">
+                            <strong>CheckStyle</strong>
+                            <p>Enforced from Sprint 1, passing completely by Sprint 4</p>
+                        </div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">✓</div>
+                        <div class="tool-details">
+                            <strong>Pull Request Reviews</strong>
+                            <p>All code changes reviewed by at least one team member</p>
+                        </div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">✓</div>
+                        <div class="tool-details">
+                            <strong>JUnit 4 & Robolectric</strong>
+                            <p>Comprehensive unit testing framework</p>
+                        </div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">✓</div>
+                        <div class="tool-details">
+                            <strong>Gradle Integration</strong>
+                            <p>Automated testing via ./gradlew :app:testDebugUnitTest</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="refactoring">
+                <h3>Sprint 4 Code Smell Refactoring</h3>
+                <p>
+                    Six code smells identified and fixed (1 per team member), demonstrating improved code quality through:
+                </p>
+                <div class="refactoring-items">
+                    <span class="refactor-badge">Long method extraction</span>
+                    <span class="refactor-badge">Magic number elimination</span>
+                    <span class="refactor-badge">Duplicate code consolidation</span>
+                    <span class="refactor-badge">Improved naming conventions</span>
+                    <span class="refactor-badge">Reduced cyclomatic complexity</span>
+                    <span class="refactor-badge">Better error handling</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section class="technologies" id="tech">
+        <div class="container">
+            <h2 class="section-title">Technologies & Tools</h2>
+            
+            <div class="tech-categories">
+                <div class="tech-category">
+                    <h3>Primary Technologies</h3>
+                    <div class="tech-list">
+                        <div class="tech-detail">
+                            <strong>Java</strong>
+                            <span>100% of application code (per course requirement)</span>
+                        </div>
+                        <div class="tech-detail">
+                            <strong>Android SDK</strong>
+                            <span>Min SDK 24 (Android 7.0), Target SDK 34, Compile SDK 35</span>
+                        </div>
+                        <div class="tech-detail">
+                            <strong>Firebase</strong>
+                            <span>Authentication for user management, Realtime Database for all application data</span>
+                        </div>
+                        <div class="tech-detail">
+                            <strong>MPAndroidChart v3.1.0</strong>
+                            <span>Professional charting library for data visualization</span>
+                        </div>
+                        <div class="tech-detail">
+                            <strong>OkHttp3 v4.11.0</strong>
+                            <span>HTTP client for AI API communication</span>
+                        </div>
+                        <div class="tech-detail">
+                            <strong>Material Design Components</strong>
+                            <span>Modern Android UI components</span>
+                        </div>
+                        <div class="tech-detail">
+                            <strong>AndroidX</strong>
+                            <span>AppCompat, ConstraintLayout, RecyclerView, Lifecycle (ViewModel, LiveData)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>Development Tools</h3>
+                    <div class="tech-list">
+                        <div class="tech-detail">
+                            <strong>Android Studio</strong>
+                            <span>Primary IDE</span>
+                        </div>
+                        <div class="tech-detail">
+                            <strong>Gradle</strong>
+                            <span>Build system and dependency management</span>
+                        </div>
+                        <div class="tech-detail">
+                            <strong>Git & GitHub</strong>
+                            <span>Version control with branch-based workflow</span>
+                        </div>
+                        <div class="tech-detail">
+                            <strong>Firebase Console</strong>
+                            <span>Backend management and monitoring</span>
+                        </div>
+                        <div class="tech-detail">
+                            <strong>Ollama</strong>
+                            <span>Local AI model hosting (LLaMA 3.2)</span>
+                        </div>
+                        <div class="tech-detail">
+                            <strong>CheckStyle</strong>
+                            <span>Code style enforcement</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tech-category">
+                    <h3>Testing & Quality</h3>
+                    <div class="tech-list">
+                        <div class="tech-detail">
+                            <strong>JUnit 4</strong>
+                            <span>Unit testing framework</span>
+                        </div>
+                        <div class="tech-detail">
+                            <strong>Robolectric</strong>
+                            <span>Android unit testing</span>
+                        </div>
+                        <div class="tech-detail">
+                            <strong>Pull Request Reviews</strong>
+                            <span>Peer code review process</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="team" id="team">
+        <div class="container">
+            <h2 class="section-title">Meet the Team</h2>
+            <p class="section-intro">
+                Six Georgia Tech students who collaborated to build a production-ready Android application 
+                while mastering software engineering principles.
+            </p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <div class="member-avatar">AA</div>
+                    <h3>Aazam Alam</h3>
+                    <p>Developer</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">SD</div>
+                    <h3>Showmick Das</h3>
+                    <p>Developer</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">SG</div>
+                    <h3>Suhaani Gupta</h3>
+                    <p>Developer</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">DM</div>
+                    <h3>Daanish Mehra</h3>
+                    <p>Developer</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">AY</div>
+                    <h3>Arush Yadav</h3>
+                    <p>Developer</p>
+                </div>
+                <div class="team-member">
+                    <div class="member-avatar">RZ</div>
+                    <h3>Rayeed Zaman</h3>
+                    <p>Developer</p>
+                </div>
+            </div>
+
+            <div class="collaboration">
+                <h3>Collaborative Development</h3>
+                <p>
+                    All team members contributed across all sprints with balanced workload distribution. 
+                    Each sprint included pre-sprint agreements, minimum 2 unit tests per member, individual 
+                    feature branches with pull requests, code reviews, and participation in scrum meetings.
+                </p>
+            </div>
+
+            <div class="achievements">
+                <h3>Key Achievements</h3>
+                <ul>
+                    <li>✓ Successfully delivered 100% of required functionality across 4 sprints</li>
+                    <li>✓ Maintained rigorous MVVM architecture throughout</li>
+                    <li>✓ Implemented advanced features: real-time collaboration, AI integration, smart notifications</li>
+                    <li>✓ Demonstrated strong software engineering principles: SOLID, GRASP, design patterns</li>
+                    <li>✓ Achieved high code quality with comprehensive testing and CheckStyle compliance</li>
+                    <li>✓ Effective Agile/Scrum practices with consistent sprint delivery</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>SpendWise</h4>
+                    <p>A personal finance management Android application developed for CS 2340 (Objects and Design) at Georgia Tech.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Course Information</h4>
+                    <p>CS 2340 - Objects and Design</p>
+                    <p>Fall 2025</p>
+                    <p>Georgia Institute of Technology</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Team Members</h4>
+                    <p>Aazam Alam, Showmick Das, Suhaani Gupta, Daanish Mehra, Arush Yadav, Rayeed Zaman</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links</h4>
+                    <a href="https://github.com" target="_blank" class="footer-link">GitHub Repository</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 SpendWise Team. Built with dedication as part of Georgia Tech CS 2340.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
